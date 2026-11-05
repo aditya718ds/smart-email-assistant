@@ -1,0 +1,23 @@
+Smartmail extension 1.1.1
+
+Fixed the Gmail AI Reply button:
+- Bundled the panel directly into the content script; no dynamic module import.
+- Built controls with DOM methods compatible with restrictive Trusted Types policies.
+- Handled the launcher click before Gmail's editor event handlers.
+- Opened the preview in a separate dialog outside Gmail's editable draft.
+- Kept the launcher non-editable and reattached it after compose re-renders.
+- Positioned the launcher in the compose header to keep draft text unobstructed.
+- Preserved existing draft text and signatures during insertion.
+
+To activate an update to an already loaded unpacked extension:
+1. Open chrome://extensions.
+2. Click Reload on the Smartmail card. Confirm version 1.1.1.
+3. Refresh Gmail.
+4. Click AI Reply, review context, then Generate reply.
+5. Review the preview, then choose Insert into empty draft or Copy reply.
+
+The local app must be running on port 8080. The extension never sends an email.
+
+Developer rebuild: install the frontend's npm dependencies, then run
+node extension/build.mjs from the project root. The editable source is
+content-entry.js plus panel.js; content.js is the generated browser bundle.

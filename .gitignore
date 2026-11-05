@@ -1,0 +1,17 @@
+# Private local settings
+config.properties
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# Dependencies and generated files
+frontend/node_modules/
+backend/target/
+backend/src/main/resources/static/assets/
+app/*.jar
+.tools/
+*.log
+*.zip
+.DS_Store
+Thumbs.db
